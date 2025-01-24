@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Seekho App</string>
+    <string name="anime_ist">Anime List</string>
+    <string name="anime_detail">Anime Detail</string>
+    <string name="episodes">Episodes: %1s</string>
+    <string name="msg_invalid_id">Invalid Anime ID</string>
+    <string name="episodes_text">Episodes: %1$d</string>
+    <string name="rating_text">Rating: %1$.1f</string>
+
+</resources>

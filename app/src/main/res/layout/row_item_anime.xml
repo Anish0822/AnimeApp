@@ -1,0 +1,67 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="anime"
+            type="com.example.seekhoapp.api.response.Anime" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_border"
+        android:layout_marginTop="@dimen/margin_14">
+
+        <ImageView
+            android:id="@+id/animeImage"
+            android:layout_width="@dimen/margin_80"
+            android:layout_height="@dimen/margin_80"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{anime.images.jpg.image_url}"
+            tools:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/animeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{anime.title}"
+            tools:text="Title"
+            android:paddingVertical="@dimen/margin_4"
+            android:layout_marginStart="@dimen/margin_8"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/animeImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/animeEpisodes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text='@{String.format(@string/episodes_text, anime.episodes)}'
+            tools:text="Episodes: @{anime.episodes}"
+            android:paddingVertical="@dimen/margin_4"
+            app:layout_constraintStart_toStartOf="@id/animeTitle"
+            app:layout_constraintTop_toBottomOf="@id/animeTitle"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/animeRating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text='@{String.format(@string/rating_text, anime.score)}'
+            tools:text="Rating: 9"
+            android:paddingVertical="@dimen/margin_4"
+            app:layout_constraintStart_toStartOf="@id/animeTitle"
+            app:layout_constraintTop_toBottomOf="@id/animeEpisodes"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
