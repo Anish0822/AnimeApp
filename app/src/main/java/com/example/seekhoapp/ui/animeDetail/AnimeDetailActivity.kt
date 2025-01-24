@@ -49,7 +49,8 @@ class AnimeDetailActivity : AppCompatActivity() {
                 binding.tvTitle.text = anime.data.title
                 binding.tvSynopsis.text = anime.data.synopsis
                 binding.tvGenres.text = anime.data.genres.joinToString { it.name }
-                binding.tvEpisodes.text = getString(R.string.episodes, anime.data.episodes.toString())
+                binding.tvEpisodes.text =
+                    getString(R.string.episodes, anime.data.episodes.toString())
                 binding.tvRating.text = anime.data.score.toString()
 
                 if (anime.data.trailer?.embed_url != null) {
